@@ -20,3 +20,7 @@ data_load_state=st.text("Loading Data ... Done!")
 
 st.subheader("Raw Data")
 st.write(data)
+
+st.subheader("Number of pickups per hour")
+hist_values=np.histogram(data[DATE_COLUMN].dt.hour)
+st.bar_chart(hist_values)
